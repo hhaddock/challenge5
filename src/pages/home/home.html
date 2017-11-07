@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Assignment Manager</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll" padding>
+  <h1>Add Assignment</h1>
+  <hr>
+  <div class="container">
+    <form (ngSubmit)="addAssignment()">
+      <ion-list>
+        <label>Assignment:</label>
+        <ion-item>
+          <ion-input type="text" class="" [(ngModel)]="assignment.title" name="title"></ion-input><br>
+        </ion-item>
+        <br>
+        <label>Class:</label>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="assignment.class" name="class"></ion-input><br>
+        </ion-item>
+        <br>
+        <label>Due:</label>
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="assignment.date" name="date"></ion-datetime>
+        </ion-item>
+        <br>
+        <button ion-button block>Add Assignment</button>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>

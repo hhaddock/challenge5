@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Assignment Manager</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll" padding>
+  <h1>View Assignments</h1>
+  <hr>
+  <div class="container">
+    <ion-row *ngFor="let assignment of assignmentList">
+      <ion-col>
+        <ion-row><strong>Assignment: </strong> {{assignment.title}}</ion-row>
+        <ion-row><strong>Class: </strong> {{assignment.class}}</ion-row>
+        <ion-row><strong>Date: </strong> {{assignment.date}}</ion-row>
+      </ion-col>
+      <ion-col><button ion-button color="secondary" (click)='completeAssignment(assignment.title, assignment.class, assignment.date)' block>Completed</button></ion-col>
+      <hr>
+    </ion-row>
+  </div>
+</ion-content>
