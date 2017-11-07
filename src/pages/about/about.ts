@@ -20,6 +20,15 @@ export class AboutPage {
     }
   }
 
+  reloadData(refresher) {
+    console.log('Begin async operation', refresher);
+    this.getData();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
+
   delete(title: string, assignment_class: string, date: string){
     for(let i = 0; i < this.completedAssignmentList.length; i++){
       if(this.completedAssignmentList[i].title == title && this.completedAssignmentList[i].class == assignment_class

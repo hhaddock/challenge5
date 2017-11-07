@@ -34,6 +34,15 @@ export class ViewAssignments {
     localStorage.setItem('assignments', JSON.stringify(this.assignmentList));
   }
 
+  reloadData(refresher) {
+    console.log('Begin async operation', refresher);
+    this.getData();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
+
   constructor(public navCtrl: NavController) {
     this.getData();
   }
