@@ -7,9 +7,9 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
-  assignmentList: any[] = [];
-  completedAssignmentList: any[] = [];
-  assignment = {};
+  assignmentList: any[] = []
+  completedAssignmentList: any[] = []
+  assignment = <any>{}
 
   getData(){
     if(localStorage.getItem('assignments') != null){

@@ -6,9 +6,10 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  assignment = <any>{}
+  assignmentList: any[] = []
+  completedAssignmentList: any[] = []
 
-  assignment = {};
-  assignmentList: any[] = [];
 
   addAssignment() {
     this.assignmentList.push({title: this.assignment.title, class: this.assignment.class, date: this.assignment.date, completed: false});
